@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MagicHoroscope));
             this.panelHead = new System.Windows.Forms.Panel();
+            this.txtHead = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.calcButton = new System.Windows.Forms.Button();
             this.pictureSign = new System.Windows.Forms.PictureBox();
             this.pictureElement = new System.Windows.Forms.PictureBox();
             this.txtBoxRes = new System.Windows.Forms.TextBox();
             this.outputGroup = new System.Windows.Forms.GroupBox();
-            this.txtHead = new System.Windows.Forms.Label();
             this.helloLabel = new System.Windows.Forms.Label();
             this.panelHead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSign)).BeginInit();
@@ -50,8 +50,20 @@
             this.panelHead.Controls.Add(this.txtHead);
             this.panelHead.Location = new System.Drawing.Point(12, 12);
             this.panelHead.Name = "panelHead";
-            this.panelHead.Size = new System.Drawing.Size(776, 100);
+            this.panelHead.Size = new System.Drawing.Size(776, 88);
             this.panelHead.TabIndex = 0;
+            // 
+            // txtHead
+            // 
+            this.txtHead.AutoSize = true;
+            this.txtHead.BackColor = System.Drawing.Color.Transparent;
+            this.txtHead.Font = new System.Drawing.Font("Papyrus", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHead.ForeColor = System.Drawing.Color.White;
+            this.txtHead.Location = new System.Drawing.Point(169, 13);
+            this.txtHead.Name = "txtHead";
+            this.txtHead.Size = new System.Drawing.Size(413, 76);
+            this.txtHead.TabIndex = 0;
+            this.txtHead.Text = "Magic Horoscope";
             // 
             // dateTimePicker
             // 
@@ -111,7 +123,7 @@
             this.txtBoxRes.Name = "txtBoxRes";
             this.txtBoxRes.ReadOnly = true;
             this.txtBoxRes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBoxRes.Size = new System.Drawing.Size(276, 280);
+            this.txtBoxRes.Size = new System.Drawing.Size(276, 309);
             this.txtBoxRes.TabIndex = 4;
             // 
             // outputGroup
@@ -120,23 +132,11 @@
             this.outputGroup.Controls.Add(this.pictureSign);
             this.outputGroup.Controls.Add(this.txtBoxRes);
             this.outputGroup.Controls.Add(this.pictureElement);
-            this.outputGroup.Location = new System.Drawing.Point(325, 118);
+            this.outputGroup.Location = new System.Drawing.Point(325, 104);
             this.outputGroup.Name = "outputGroup";
-            this.outputGroup.Size = new System.Drawing.Size(451, 305);
+            this.outputGroup.Size = new System.Drawing.Size(451, 334);
             this.outputGroup.TabIndex = 5;
             this.outputGroup.TabStop = false;
-            // 
-            // txtHead
-            // 
-            this.txtHead.AutoSize = true;
-            this.txtHead.BackColor = System.Drawing.Color.Transparent;
-            this.txtHead.Font = new System.Drawing.Font("Papyrus", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHead.ForeColor = System.Drawing.Color.White;
-            this.txtHead.Location = new System.Drawing.Point(169, 13);
-            this.txtHead.Name = "txtHead";
-            this.txtHead.Size = new System.Drawing.Size(413, 76);
-            this.txtHead.TabIndex = 0;
-            this.txtHead.Text = "Magic Horoscope";
             // 
             // helloLabel
             // 

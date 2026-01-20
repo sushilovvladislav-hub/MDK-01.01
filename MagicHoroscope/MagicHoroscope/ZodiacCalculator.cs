@@ -6,7 +6,6 @@ namespace MagicHoroscope
 {
     internal class ZodiacCalculator
     {
-        private readonly Dictionary<string, ZodiacSign> _zodiacSignsByName;
         private readonly List<ZodiacSign> _zodiacSigns;
         private readonly Dictionary<string, string> _elementDescriptions;
 
@@ -14,7 +13,6 @@ namespace MagicHoroscope
         {
             _elementDescriptions = InitializeElementDescriptions();
             _zodiacSigns = InitializeZodiacSigns();
-            _zodiacSignsByName = _zodiacSigns.ToDictionary(s => s.Name, s => s);
         }
 
         private Dictionary<string, string> InitializeElementDescriptions()
@@ -48,11 +46,6 @@ namespace MagicHoroscope
             };
         }
 
-        public ZodiacSign GetSignByName(string name)
-        {
-            return _zodiacSignsByName.TryGetValue(name, out var sign) ? sign : null;
-        }
-
         public ZodiacSign GetSignByDate(DateTime birthDate)
         {
             int month = birthDate.Month;
@@ -70,16 +63,19 @@ namespace MagicHoroscope
 
         private bool IsDateInRange(int month, int day, ZodiacSign sign)
         {
-            bool crossesYear = sign.EndMonth < sign.StartMonth || (sign.EndMonth == sign.StartMonth && sign.EndDay < sign.StartDay);
+        
+            DateTime currentDate = new DateTime(2000, month, day);
+            DateTime startDate = new DateTime(2000, sign.StartMonth, sign.StartDay);
+            DateTime endDate = new DateTime(2000, sign.EndMonth, sign.EndDay);
 
-            if (crossesYear)
-            {
-                return (month == sign.StartMonth && day >= sign.StartDay) || (month == sign.EndMonth && day <= sign.EndDay);
-            }
-            else
-            {
-                return (month == sign.StartMonth && day >= sign.StartDay) || (month == sign.EndMonth && day <= sign.EndDay) || (month > sign.StartMonth && month < sign.EndMonth);
-            }
+            if (endDate < startDate)
+                endDate = endDate.AddYears(1);
+
+            if (currentDate < startDate)
+                currentDate = currentDate.AddYears(1);
+
+            return currentDate >= startDate && currentDate <= endDate;
+        
         }
 
         public string GetElementDescription(string element)

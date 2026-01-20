@@ -12,6 +12,11 @@ namespace MagicHoroscope
         public MagicHoroscope()
         {
             InitializeComponent();
+            
+            dateTimePicker.MinDate = new DateTime(1900, 1, 1);
+            dateTimePicker.MaxDate = DateTime.Today;
+            dateTimePicker.Value = DateTime.Today;
+            
             _calculator = new ZodiacCalculator();
             pictureElement.SizeMode = PictureBoxSizeMode.Zoom;
             pictureSign.SizeMode = PictureBoxSizeMode.Zoom;

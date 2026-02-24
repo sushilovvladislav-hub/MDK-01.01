@@ -57,18 +57,18 @@
             // 
             this.txtHead.AutoSize = true;
             this.txtHead.BackColor = System.Drawing.Color.Transparent;
-            this.txtHead.Font = new System.Drawing.Font("Papyrus", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHead.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHead.ForeColor = System.Drawing.Color.White;
             this.txtHead.Location = new System.Drawing.Point(169, 13);
             this.txtHead.Name = "txtHead";
-            this.txtHead.Size = new System.Drawing.Size(413, 76);
+            this.txtHead.Size = new System.Drawing.Size(399, 55);
             this.txtHead.TabIndex = 0;
             this.txtHead.Text = "Magic Horoscope";
             // 
             // dateTimePicker
             // 
             this.dateTimePicker.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dateTimePicker.CalendarFont = new System.Drawing.Font("Papyrus", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker.CalendarMonthBackground = System.Drawing.Color.White;
             this.dateTimePicker.CalendarTitleBackColor = System.Drawing.Color.White;
             this.dateTimePicker.Cursor = System.Windows.Forms.Cursors.Default;
@@ -84,7 +84,7 @@
             // calcButton
             // 
             this.calcButton.BackColor = System.Drawing.Color.White;
-            this.calcButton.Font = new System.Drawing.Font("Papyrus", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calcButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calcButton.ForeColor = System.Drawing.Color.Black;
             this.calcButton.Location = new System.Drawing.Point(12, 261);
             this.calcButton.Name = "calcButton";
@@ -142,11 +142,11 @@
             // 
             this.helloLabel.AutoSize = true;
             this.helloLabel.BackColor = System.Drawing.Color.Transparent;
-            this.helloLabel.Font = new System.Drawing.Font("Papyrus", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helloLabel.ForeColor = System.Drawing.Color.White;
             this.helloLabel.Location = new System.Drawing.Point(4, 171);
             this.helloLabel.Name = "helloLabel";
-            this.helloLabel.Size = new System.Drawing.Size(321, 21);
+            this.helloLabel.Size = new System.Drawing.Size(319, 16);
             this.helloLabel.TabIndex = 6;
             this.helloLabel.Text = "Choose your birthday in calendar and click on button ";
             // 

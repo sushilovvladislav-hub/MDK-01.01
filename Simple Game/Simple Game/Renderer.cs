@@ -31,6 +31,7 @@ namespace Simple_Game
 
 
             DrawSky(g);
+            DrawGrass(g);
             DrawRoad(g);
             DrawPlayerCar(g);
         }
@@ -59,14 +60,36 @@ namespace Simple_Game
             }
         }
 
+        private void DrawGrass(Graphics g) 
+        {
+            Bitmap grass = assets.GetTexture("Grass");
+
+            double playerX = world.PlayerX;
+            int grassOffSet = (int)(playerX * 15);
+            
+            int grassWidth = SCREEN_WIDTH + 200;
+            int grassHeight = SCREEN_HEIGHT / 2;
+
+            g.DrawImage(grass, grassOffSet, 300, grassWidth, grassHeight);
+
+            if (grassOffSet < 0)
+            {
+                g.DrawImage(grass, grassOffSet + grassWidth, 300, grassWidth, grassHeight);
+            }
+            else if (grassOffSet > 0) 
+            {
+                g.DrawImage(grass, grassOffSet - grassOffSet, 300, grassWidth, grassHeight);
+            }
+        }
+
         private void DrawRoad(Graphics g) 
         {
             Bitmap roadTex = assets.GetTexture("Road");
             int segmentCount = 50;
 
-            double curvePower = 1.2;
-            double heightFactor = 1.6;
-            int horizonOffSet = 295;
+            double curvePower = 1.15;
+            double heightFactor = 1.1;
+            int horizonOffSet = 300;
 
             int minWidth = 25;
             int maxWidth = 2000;
@@ -79,7 +102,7 @@ namespace Simple_Game
             int texWidth = roadTex.Width;
         
             
-            for (int i = segmentCount - 1; i >= 0; i--) 
+            for (int i = 0; i <= segmentCount; i++) 
             {
                 double distance = i / (double)segmentCount;
                 double t = Math.Pow(distance, curvePower);
@@ -108,6 +131,7 @@ namespace Simple_Game
         {
             Bitmap car = assets.GetTexture("PlayerCar");
             double playerX = world.PlayerX;
+            double carTilt = world.SteeringAngle;
             
             int carWidth = 240;
             int carHeight = 180;
@@ -115,20 +139,30 @@ namespace Simple_Game
             int carX = SCREEN_WIDTH / 2 + (int)(playerX * 100) - carWidth / 2;
             int carY = SCREEN_HEIGHT - carHeight - 10;
 
-            if (Math.Abs(playerX) > 0.1)
+            int upShift = (int)(carTilt * 40);
+            int bottomShift = (int)(carTilt * 10);
+            
+            var state = g.Save();
+
+            g.TranslateTransform(carX + carWidth / 2, carY + carHeight / 2);
+            g.RotateTransform((float)(carTilt * 2));
+            g.TranslateTransform(-(carX + carWidth / 2), -(carY + carHeight / 2));
+
+
+            Point[] destPoints = new Point[]
             {
-                var state = g.Save();
-                g.TranslateTransform(carX + carWidth / 2, carY + carHeight / 2);
-                g.RotateTransform((float)(playerX * 0.15));
-                g.TranslateTransform(-(carX + carWidth / 2), -(carY + carHeight / 2));
-                g.DrawImage(car, carX, carY, carWidth, carHeight);
-                g.Restore(state);
-            }
-            else 
-            {
-                g.DrawImage(car, carX, carY, carWidth, carHeight);
-            }
+                new Point(carX + upShift, carY),
+                new Point(carX + carWidth + upShift, carY),
+                new Point(carX + bottomShift, carY + carHeight),
+            };
+
+
+            g.DrawImage(car, destPoints);
+
+            g.Restore(state);
 
         }
+        
+        
     }
 }

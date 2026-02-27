@@ -1,6 +1,6 @@
 ﻿namespace Simple_Game
 {
-    partial class SimpleGame
+    partial class Form1
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -16,10 +16,6 @@
             if (disposing && (components != null))
             {
                 components.Dispose();
-
-                gameTimer?.Dispose();
-                input?.Dispose();
-                assets?.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -32,20 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // SimpleGame
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "SimpleGame";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Simple Game";
-            this.ResumeLayout(false);
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "Form1";
         }
 
         #endregion

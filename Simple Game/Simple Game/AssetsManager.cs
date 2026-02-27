@@ -68,6 +68,7 @@ namespace Simple_Game
         private void LoadAllTextures() 
         {
             LoadTexture("Road", Properties.Resources.newRoad);
+            LoadTexture("Grass", Properties.Resources.newGrass);
             LoadTexture("PlayerCar", Properties.Resources.newCar);
             LoadTexture("Sky", Properties.Resources.newSky);
         }

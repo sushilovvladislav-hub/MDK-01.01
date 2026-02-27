@@ -121,6 +121,9 @@
   <data name="newCar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\newCar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="newGrass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newGrass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="newRoad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\newRoad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

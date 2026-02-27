@@ -54,6 +54,5 @@ namespace Simple_Game
         }
 
         
-        
     }
 }

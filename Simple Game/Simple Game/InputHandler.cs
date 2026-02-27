@@ -59,18 +59,22 @@ namespace Simple_Game
         {
             switch (e.KeyCode) 
             {
+                case Keys.Left:
                 case Keys.A:
                     isLeftPressed = true;
                     break;
-                
+
+                case Keys.Right:
                 case Keys.D:
                     isRightPressed = true;
                     break;
 
+                case Keys.Up:
                 case Keys.W:
                     isAcceleratorPressed = true;
                     break;
 
+                case Keys.Down:
                 case Keys.S:
                     isBrakePressed = true;
                     break;
@@ -81,18 +85,22 @@ namespace Simple_Game
         {
             switch (e.KeyCode)
             {
+                case Keys.Left:
                 case Keys.A:
                     isLeftPressed = false;
                     break;
 
+                case Keys.Right:
                 case Keys.D:
                     isRightPressed = false;
                     break;
 
+                case Keys.Up:
                 case Keys.W:
                     isAcceleratorPressed = false;
                     break;
 
+                case Keys.Down:
                 case Keys.S:
                     isBrakePressed = false;
                     break;
